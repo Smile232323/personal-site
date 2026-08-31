@@ -1,0 +1,23 @@
+---
+import { getCollection, render } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Main from "@/components/Main.astro";
+import Footer from "@/components/Footer.astro";
+
+export async function getStaticPaths() {
+  const notes = await getCollection("notes", ({ data }) => !data.draft);
+  return notes.map(note => ({ params: { slug: note.id }, props: { note } }));
+}
+
+const { note } = Astro.props;
+const { Content } = await render(note);
+---
+
+<Layout title={`${note.data.title} | 笔记`} description={note.data.description}>
+  <Header />
+  <Main pageTitle={note.data.title} pageDesc={note.data.description} class="app-prose">
+    <Content />
+  </Main>
+  <Footer />
+</Layout>

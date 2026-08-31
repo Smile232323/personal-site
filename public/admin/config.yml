@@ -1,0 +1,98 @@
+backend:
+  name: github
+  repo: Smile232323/personal-site
+  branch: main
+
+media_folder: public/uploads
+public_folder: /personal-site/uploads
+
+collections:
+  - name: posts
+    label: 文章
+    folder: src/content/posts
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: 标题, name: title, widget: string }
+      - { label: 作者, name: author, widget: string, default: Smile232323 }
+      - { label: 发布时间, name: pubDatetime, widget: datetime }
+      - { label: 描述, name: description, widget: text }
+      - { label: 标签, name: tags, widget: list, default: [] }
+      - { label: 精选, name: featured, widget: boolean, default: false }
+      - { label: 草稿, name: draft, widget: boolean, default: false }
+      - { label: 正文, name: body, widget: markdown }
+
+  - name: notes
+    label: 笔记
+    folder: src/content/notes
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: 标题, name: title, widget: string }
+      - { label: 描述, name: description, widget: text, required: false }
+      - {
+          label: 发布时间,
+          name: pubDatetime,
+          widget: datetime,
+          required: false,
+        }
+      - { label: 标签, name: tags, widget: list, default: [] }
+      - { label: 草稿, name: draft, widget: boolean, default: false }
+      - { label: 正文, name: body, widget: markdown }
+
+  - name: projects
+    label: 作品
+    folder: src/content/projects
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: 名称, name: title, widget: string }
+      - { label: 描述, name: description, widget: text }
+      - {
+          label: 状态,
+          name: status,
+          widget: select,
+          options: [active, maintained, archived],
+          default: active,
+        }
+      - { label: 技术栈, name: stack, widget: list, default: [] }
+      - { label: GitHub 地址, name: repo, widget: string, required: false }
+      - { label: Demo 地址, name: demo, widget: string, required: false }
+      - { label: 精选, name: featured, widget: boolean, default: false }
+      - { label: 草稿, name: draft, widget: boolean, default: false }
+      - { label: 项目详情, name: body, widget: markdown }
+
+  - name: publications
+    label: 论文与报告
+    folder: src/content/publications
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: 标题, name: title, widget: string }
+      - { label: 描述, name: description, widget: text, required: false }
+      - { label: 会议或期刊, name: venue, widget: string, required: false }
+      - { label: 年份, name: year, widget: number, required: false }
+      - { label: 链接, name: url, widget: string, required: false }
+      - { label: 草稿, name: draft, widget: boolean, default: false }
+      - { label: 正文, name: body, widget: markdown }
+
+  - name: settings
+    label: 个人资料与简历
+    files:
+      - name: profile
+        label: 个人资料
+        file: src/data/profile.yml
+        fields:
+          - { label: 姓名, name: name, widget: string }
+          - { label: 标题, name: headline, widget: string }
+          - { label: 所在地, name: location, widget: string, required: false }
+          - { label: GitHub, name: github, widget: string }
+          - { label: 邮箱, name: email, widget: string, required: false }
+      - name: resume
+        label: 简历
+        file: src/data/resume.yml
+        fields:
+          - { label: 简介, name: summary, widget: text }
+          - { label: 技能, name: skills, widget: list }
+          - { label: 经历, name: experience, widget: list, required: false }
+          - { label: 教育, name: education, widget: list, required: false }

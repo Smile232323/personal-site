@@ -5,6 +5,15 @@ import config from "@/config";
 
 export const BLOG_PATH = "src/content/posts";
 
+const commonFields = {
+  title: z.string(),
+  description: z.string().optional(),
+  draft: z.boolean().default(false),
+  pubDatetime: z.date().optional(),
+  modDatetime: z.date().optional().nullable(),
+  tags: z.array(z.string()).default([]),
+};
+
 const posts = defineCollection({
   loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: `./${BLOG_PATH}` }),
   schema: ({ image }) =>
@@ -34,4 +43,42 @@ const pages = defineCollection({
   }),
 });
 
-export const collections = { posts, pages };
+const notes = defineCollection({
+  loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/notes" }),
+  schema: z.object({
+    ...commonFields,
+    title: z.string(),
+    description: z.string().default(""),
+  }),
+});
+
+const projects = defineCollection({
+  loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/projects" }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    draft: z.boolean().default(false),
+    status: z.enum(["active", "maintained", "archived"]).default("active"),
+    stack: z.array(z.string()).default([]),
+    repo: z.string().url().optional(),
+    demo: z.string().url().optional(),
+    featured: z.boolean().default(false),
+  }),
+});
+
+const publications = defineCollection({
+  loader: glob({
+    pattern: "**/[^_]*.{md,mdx}",
+    base: "./src/content/publications",
+  }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string().default(""),
+    draft: z.boolean().default(false),
+    venue: z.string().optional(),
+    year: z.number().optional(),
+    url: z.string().url().optional(),
+  }),
+});
+
+export const collections = { posts, pages, notes, projects, publications };
