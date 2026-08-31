@@ -26,6 +26,10 @@ pnpm-debug.log*
 # pagefind
 public/pagefind
 
+# local sync state and Python cache
+.sync-status
+__pycache__/
+
 # pnpm
 .pnpm-store
 
