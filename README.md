@@ -4,7 +4,7 @@
 
 ## 本地编辑
 
-本项目集成了 [Sveltia CMS](https://github.com/sveltia/sveltia-cms) 本地工作流。首次准备好依赖后，在项目目录运行：
+本项目集成了 [Sveltia CMS](https://github.com/sveltia/sveltia-cms) 的 Local Workflow。首次准备好依赖后，在项目目录运行：
 
 ```bash
 pnpm dev

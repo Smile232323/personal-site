@@ -1,8 +1,7 @@
-# Sveltia's local backend uses the browser File System Access API. The editor
-# writes directly to the checked-out repository; scripts/auto_sync.py handles
-# commits and pushes in the background.
 backend:
-  name: local
+  name: github
+  repo: Smile232323/personal-site
+  branch: main
 
 media_folder: public/uploads
 public_folder: /personal-site/uploads
