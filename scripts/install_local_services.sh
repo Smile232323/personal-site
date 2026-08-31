@@ -18,6 +18,7 @@ cat > "$LAUNCH_DIR/com.smile232323.personal-site-sync.plist" <<PLIST
     <string>--repo</string><string>$REPO_DIR</string>
   </array>
   <key>WorkingDirectory</key><string>$REPO_DIR</string>
+  <key>EnvironmentVariables</key><dict><key>PATH</key><string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin</string></dict>
   <key>RunAtLoad</key><true/>
   <key>KeepAlive</key><true/>
   <key>StandardOutPath</key><string>$HOME/Library/Logs/personal-site-sync.log</string>
@@ -34,6 +35,7 @@ cat > "$LAUNCH_DIR/com.smile232323.personal-site-dev.plist" <<PLIST
     <string>$PNPM_BIN</string><string>dev</string><string>--host</string><string>127.0.0.1</string>
   </array>
   <key>WorkingDirectory</key><string>$REPO_DIR</string>
+  <key>EnvironmentVariables</key><dict><key>PATH</key><string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin</string></dict>
   <key>RunAtLoad</key><true/>
   <key>KeepAlive</key><true/>
   <key>StandardOutPath</key><string>$HOME/Library/Logs/personal-site-dev.log</string>
