@@ -40,6 +40,10 @@ const pages = defineCollection({
     description: z.string().optional(),
     ogImage: z.string().optional(),
     canonicalURL: z.string().optional(),
+    summary: z.string().optional(),
+    skills: z.array(z.string()).default([]),
+    experience: z.array(z.string()).default([]),
+    education: z.array(z.string()).default([]),
   }),
 });
 

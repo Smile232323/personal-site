@@ -1,7 +1,8 @@
+# Sveltia's local backend uses the browser File System Access API. The editor
+# writes directly to the checked-out repository; scripts/auto_sync.py handles
+# commits and pushes in the background.
 backend:
-  name: github
-  repo: Smile232323/personal-site
-  branch: main
+  name: local
 
 media_folder: public/uploads
 public_folder: /personal-site/uploads
@@ -90,9 +91,12 @@ collections:
           - { label: 邮箱, name: email, widget: string, required: false }
       - name: resume
         label: 简历
-        file: src/data/resume.yml
+        file: src/content/pages/resume.md
         fields:
+          - { label: 标题, name: title, widget: string, default: 简历 }
+          - { label: 页面描述, name: description, widget: text, required: false }
           - { label: 简介, name: summary, widget: text }
           - { label: 技能, name: skills, widget: list }
           - { label: 经历, name: experience, widget: list, required: false }
           - { label: 教育, name: education, widget: list, required: false }
+          - { label: 其他内容, name: body, widget: markdown, required: false }

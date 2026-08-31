@@ -10,13 +10,13 @@
 pnpm dev
 ```
 
-使用 Chrome、Edge 或 Chromium 版 Brave 打开：
+使用 Chrome、Edge 或 Chromium 版 Brave 打开（Safari/Firefox 不支持本地文件授权）：
 
 ```text
 http://localhost:4321/admin/index.html
 ```
 
-选择本项目根目录后即可在网页中编辑文章、笔记、作品、论文、个人资料和简历。内容会直接写入 `src/content/`、`src/data/` 与 `public/uploads/`。
+点击“使用本地仓库”并选择本项目根目录后，即可在网页中编辑文章、笔记、作品、论文、个人资料和简历。内容会直接写入 `src/content/`、`src/data/` 与 `public/uploads/`。
 
 ## 自动同步
 
@@ -40,7 +40,7 @@ public/uploads/
 
 ## 网站发布
 
-推送到 `main` 后，GitHub Actions 会构建静态网站并部署到 GitHub Pages：
+内容同步到 `main` 后，GitHub Actions 会构建静态网站并部署到 GitHub Pages：
 
 <https://smile232323.github.io/personal-site/>
 
@@ -52,7 +52,7 @@ src/content/notes/          笔记
 src/content/projects/       作品
 src/content/publications/   论文与报告
 src/data/profile.yml        个人资料
-src/data/resume.yml         简历
+src/content/pages/resume.md 简历页面（CMS 编辑入口）
 public/admin/               本地 Sveltia CMS
 scripts/                    本地服务与自动同步
 ```

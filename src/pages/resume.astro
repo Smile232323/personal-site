@@ -1,0 +1,71 @@
+---
+import { getEntry, render } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Breadcrumb from "@/components/Breadcrumb.astro";
+import Main from "@/components/Main.astro";
+import Footer from "@/components/Footer.astro";
+import config from "@/config";
+
+const resume = await getEntry("pages", "resume");
+
+if (!resume) {
+  throw new Error("Missing content entry: `resume.md` or `resume.mdx`");
+}
+
+const { Content } = await render(resume);
+const { summary, skills, experience, education } = resume.data;
+---
+
+<Layout
+  title={`${resume.data.title} | ${config.site.title}`}
+  description={resume.data.description}
+  ogImage={resume.data.ogImage}
+  canonicalURL={resume.data.canonicalURL}
+>
+  <Header />
+  <Breadcrumb />
+  <Main pageTitle={resume.data.title} pageDesc={resume.data.description}>
+    {summary && <p class="lead text-lg">{summary}</p>}
+
+    {
+      skills.length > 0 && (
+        <section class="mt-8">
+          <h2>技能</h2>
+          <ul class="mt-3 flex flex-wrap gap-2">
+            {skills.map(skill => (
+              <li class="border-border rounded border px-3 py-1 text-sm">{skill}</li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+
+    {
+      experience.length > 0 && (
+        <section class="mt-8">
+          <h2>经历</h2>
+          <ul class="mt-3 list-disc space-y-2 ps-5">
+            {experience.map(item => <li>{item}</li>)}
+          </ul>
+        </section>
+      )
+    }
+
+    {
+      education.length > 0 && (
+        <section class="mt-8">
+          <h2>教育</h2>
+          <ul class="mt-3 list-disc space-y-2 ps-5">
+            {education.map(item => <li>{item}</li>)}
+          </ul>
+        </section>
+      )
+    }
+
+    <div class="app-prose mt-8">
+      <Content />
+    </div>
+  </Main>
+  <Footer />
+</Layout>
