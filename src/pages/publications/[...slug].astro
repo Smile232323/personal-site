@@ -1,0 +1,65 @@
+---
+import { getCollection, render } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Breadcrumb from "@/components/Breadcrumb.astro";
+import Main from "@/components/Main.astro";
+import Footer from "@/components/Footer.astro";
+import config from "@/config";
+import SourceNote from "@/components/SourceNote.astro";
+
+export async function getStaticPaths() {
+  const publications = await getCollection(
+    "publications",
+    ({ data }) => !data.draft
+  );
+  return publications.map(publication => ({
+    params: { slug: publication.id },
+    props: { publication },
+  }));
+}
+
+const { publication } = Astro.props;
+const { Content } = await render(publication);
+---
+
+<Layout
+  title={`${publication.data.title} | ${config.site.title}`}
+  description={publication.data.description}
+>
+  <Header />
+  <Breadcrumb />
+  <Main
+    pageTitle={publication.data.title}
+    pageDesc={publication.data.description}
+  >
+    <SourceNote
+      source={publication.data.source}
+      sourceDate={publication.data.sourceDate}
+      curatedAt={publication.data.curatedAt}
+      sourceNote={publication.data.sourceNote}
+    />
+    <div data-pagefind-body class="app-prose">
+      {
+        (publication.data.venue || publication.data.year) && (
+          <p class="not-prose mb-6 text-sm opacity-70">
+            {[publication.data.venue, publication.data.year]
+              .filter(Boolean)
+              .join(" · ")}
+          </p>
+        )
+      }
+      <Content />
+      {
+        publication.data.url && (
+          <p class="not-prose mt-8">
+            <a class="text-accent underline" href={publication.data.url}>
+              查看原始链接
+            </a>
+          </p>
+        )
+      }
+    </div>
+  </Main>
+  <Footer />
+</Layout>

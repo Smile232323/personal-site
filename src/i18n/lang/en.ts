@@ -6,6 +6,7 @@ export default {
     posts: "Posts",
     notes: "Notes",
     projects: "Projects",
+    publications: "Publications",
     resume: "Resume",
     tags: "Tags",
     about: "About",
@@ -49,6 +50,9 @@ export default {
 
     postsTitle: "Posts",
     postsDesc: "All the articles I've posted.",
+
+    publicationsTitle: "Publications",
+    publicationsDesc: "Papers, reports, and public talks.",
 
     archivesTitle: "Archives",
     archivesDesc: "All the articles I've archived.",

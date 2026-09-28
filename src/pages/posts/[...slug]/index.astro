@@ -15,6 +15,7 @@ import BackButton from "./_components/BackButton.astro";
 import BackToTopButton from "./_components/BackToTopButton.astro";
 import AdjacentPostNav from "./_components/AdjacentPostNav.astro";
 import config from "@/config";
+import SourceNote from "@/components/SourceNote.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
@@ -71,6 +72,10 @@ const {
   timezone,
   tags,
   hideEditPost,
+  source,
+  sourceDate,
+  curatedAt,
+  sourceNote,
 } = post.data;
 
 const { Content } = await render(post);
@@ -133,6 +138,8 @@ const ogImage = ogImageUrl
       </span>
       <EditPost {hideEditPost} {post} class="max-sm:hidden" />
     </div>
+
+    <SourceNote {source} {sourceDate} {curatedAt} {sourceNote} />
 
     <article
       id="article"

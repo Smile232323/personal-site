@@ -6,6 +6,7 @@ export default {
     posts: "文章",
     notes: "笔记",
     projects: "作品",
+    publications: "论文与报告",
     resume: "简历",
     tags: "标签",
     about: "关于",
@@ -47,6 +48,9 @@ export default {
     tagsDesc: "文章中使用的全部标签。",
     postsTitle: "文章",
     postsDesc: "我发布的全部文章。",
+
+    publicationsTitle: "论文与报告",
+    publicationsDesc: "论文、技术报告和公开演讲材料。",
     archivesTitle: "归档",
     archivesDesc: "按时间归档的全部文章。",
     searchTitle: "搜索",

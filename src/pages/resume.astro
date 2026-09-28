@@ -26,45 +26,53 @@ const { summary, skills, experience, education } = resume.data;
   <Header />
   <Breadcrumb />
   <Main pageTitle={resume.data.title} pageDesc={resume.data.description}>
-    {summary && <p class="lead text-lg">{summary}</p>}
+    <div data-pagefind-body>
+      {summary && <p class="lead text-lg">{summary}</p>}
 
-    {
-      skills.length > 0 && (
-        <section class="mt-8">
-          <h2>技能</h2>
-          <ul class="mt-3 flex flex-wrap gap-2">
-            {skills.map(skill => (
-              <li class="border-border rounded border px-3 py-1 text-sm">{skill}</li>
-            ))}
-          </ul>
-        </section>
-      )
-    }
+      {
+        skills.length > 0 && (
+          <section class="mt-8">
+            <h2>技能</h2>
+            <ul class="mt-3 flex flex-wrap gap-2">
+              {skills.map(skill => (
+                <li class="border-border rounded border px-3 py-1 text-sm">
+                  {skill}
+                </li>
+              ))}
+            </ul>
+          </section>
+        )
+      }
 
-    {
-      experience.length > 0 && (
-        <section class="mt-8">
-          <h2>经历</h2>
-          <ul class="mt-3 list-disc space-y-2 ps-5">
-            {experience.map(item => <li>{item}</li>)}
-          </ul>
-        </section>
-      )
-    }
+      {
+        experience.length > 0 && (
+          <section class="mt-8">
+            <h2>经历</h2>
+            <ul class="mt-3 list-disc space-y-2 ps-5">
+              {experience.map(item => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </section>
+        )
+      }
 
-    {
-      education.length > 0 && (
-        <section class="mt-8">
-          <h2>教育</h2>
-          <ul class="mt-3 list-disc space-y-2 ps-5">
-            {education.map(item => <li>{item}</li>)}
-          </ul>
-        </section>
-      )
-    }
+      {
+        education.length > 0 && (
+          <section class="mt-8">
+            <h2>教育</h2>
+            <ul class="mt-3 list-disc space-y-2 ps-5">
+              {education.map(item => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </section>
+        )
+      }
 
-    <div class="app-prose mt-8">
-      <Content />
+      <div class="app-prose mt-8">
+        <Content />
+      </div>
     </div>
   </Main>
   <Footer />

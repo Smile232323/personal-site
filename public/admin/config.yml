@@ -17,6 +17,15 @@ collections:
       - { label: 作者, name: author, widget: string, default: Smile232323 }
       - { label: 发布时间, name: pubDatetime, widget: datetime }
       - { label: 描述, name: description, widget: text }
+      - { label: 原始来源, name: source, widget: string, required: false }
+      - {
+          label: 原始资料时间,
+          name: sourceDate,
+          widget: datetime,
+          required: false,
+        }
+      - { label: 整理时间, name: curatedAt, widget: datetime, required: false }
+      - { label: 整理说明, name: sourceNote, widget: text, required: false }
       - { label: 标签, name: tags, widget: list, default: [] }
       - { label: 精选, name: featured, widget: boolean, default: false }
       - { label: 草稿, name: draft, widget: boolean, default: false }
@@ -30,6 +39,15 @@ collections:
     fields:
       - { label: 标题, name: title, widget: string }
       - { label: 描述, name: description, widget: text, required: false }
+      - { label: 原始来源, name: source, widget: string, required: false }
+      - {
+          label: 原始资料时间,
+          name: sourceDate,
+          widget: datetime,
+          required: false,
+        }
+      - { label: 整理时间, name: curatedAt, widget: datetime, required: false }
+      - { label: 整理说明, name: sourceNote, widget: text, required: false }
       - {
           label: 发布时间,
           name: pubDatetime,
@@ -70,6 +88,15 @@ collections:
     fields:
       - { label: 标题, name: title, widget: string }
       - { label: 描述, name: description, widget: text, required: false }
+      - { label: 原始来源, name: source, widget: string, required: false }
+      - {
+          label: 原始资料时间,
+          name: sourceDate,
+          widget: datetime,
+          required: false,
+        }
+      - { label: 整理时间, name: curatedAt, widget: datetime, required: false }
+      - { label: 整理说明, name: sourceNote, widget: text, required: false }
       - { label: 会议或期刊, name: venue, widget: string, required: false }
       - { label: 年份, name: year, widget: number, required: false }
       - { label: 链接, name: url, widget: string, required: false }
@@ -93,7 +120,12 @@ collections:
         file: src/content/pages/resume.md
         fields:
           - { label: 标题, name: title, widget: string, default: 简历 }
-          - { label: 页面描述, name: description, widget: text, required: false }
+          - {
+              label: 页面描述,
+              name: description,
+              widget: text,
+              required: false,
+            }
           - { label: 简介, name: summary, widget: text }
           - { label: 技能, name: skills, widget: list }
           - { label: 经历, name: experience, widget: list, required: false }

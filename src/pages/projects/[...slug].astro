@@ -7,18 +7,28 @@ import Footer from "@/components/Footer.astro";
 
 export async function getStaticPaths() {
   const projects = await getCollection("projects", ({ data }) => !data.draft);
-  return projects.map(project => ({ params: { slug: project.id }, props: { project } }));
+  return projects.map(project => ({
+    params: { slug: project.id },
+    props: { project },
+  }));
 }
 
 const { project } = Astro.props;
 const { Content } = await render(project);
 ---
 
-<Layout title={`${project.data.title} | 作品`} description={project.data.description}>
+<Layout
+  title={`${project.data.title} | 作品`}
+  description={project.data.description}
+>
   <Header />
-  <Main pageTitle={project.data.title} pageDesc={project.data.description} class="app-prose">
-    <p class="not-prose mb-6 text-sm opacity-70">{project.data.stack.join(" · ")}</p>
-    <Content />
+  <Main pageTitle={project.data.title} pageDesc={project.data.description}>
+    <div data-pagefind-body class="app-prose">
+      <p class="not-prose mb-6 text-sm opacity-70">
+        {project.data.stack.join(" · ")}
+      </p>
+      <Content />
+    </div>
   </Main>
   <Footer />
 </Layout>

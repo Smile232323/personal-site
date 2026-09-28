@@ -12,6 +12,10 @@ const commonFields = {
   pubDatetime: z.date().optional(),
   modDatetime: z.date().optional().nullable(),
   tags: z.array(z.string()).default([]),
+  source: z.url().optional(),
+  sourceDate: z.coerce.date().optional(),
+  curatedAt: z.coerce.date().optional(),
+  sourceNote: z.string().optional(),
 };
 
 const posts = defineCollection({
@@ -30,6 +34,10 @@ const posts = defineCollection({
       canonicalURL: z.string().optional(),
       hideEditPost: z.boolean().optional(),
       timezone: z.string().optional(),
+      source: z.url().optional(),
+      sourceDate: z.coerce.date().optional(),
+      curatedAt: z.coerce.date().optional(),
+      sourceNote: z.string().optional(),
     }),
 });
 
@@ -57,15 +65,18 @@ const notes = defineCollection({
 });
 
 const projects = defineCollection({
-  loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/projects" }),
+  loader: glob({
+    pattern: "**/[^_]*.{md,mdx}",
+    base: "./src/content/projects",
+  }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
     draft: z.boolean().default(false),
     status: z.enum(["active", "maintained", "archived"]).default("active"),
     stack: z.array(z.string()).default([]),
-    repo: z.string().url().optional(),
-    demo: z.string().url().optional(),
+    repo: z.url().optional(),
+    demo: z.url().optional(),
     featured: z.boolean().default(false),
   }),
 });
@@ -81,7 +92,11 @@ const publications = defineCollection({
     draft: z.boolean().default(false),
     venue: z.string().optional(),
     year: z.number().optional(),
-    url: z.string().url().optional(),
+    url: z.url().optional(),
+    source: z.url().optional(),
+    sourceDate: z.coerce.date().optional(),
+    curatedAt: z.coerce.date().optional(),
+    sourceNote: z.string().optional(),
   }),
 });
 

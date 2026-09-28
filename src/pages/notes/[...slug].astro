@@ -4,6 +4,7 @@ import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Main from "@/components/Main.astro";
 import Footer from "@/components/Footer.astro";
+import SourceNote from "@/components/SourceNote.astro";
 
 export async function getStaticPaths() {
   const notes = await getCollection("notes", ({ data }) => !data.draft);
@@ -16,8 +17,16 @@ const { Content } = await render(note);
 
 <Layout title={`${note.data.title} | 笔记`} description={note.data.description}>
   <Header />
-  <Main pageTitle={note.data.title} pageDesc={note.data.description} class="app-prose">
-    <Content />
+  <Main pageTitle={note.data.title} pageDesc={note.data.description}>
+    <SourceNote
+      source={note.data.source}
+      sourceDate={note.data.sourceDate}
+      curatedAt={note.data.curatedAt}
+      sourceNote={note.data.sourceNote}
+    />
+    <div data-pagefind-body class="app-prose">
+      <Content />
+    </div>
   </Main>
   <Footer />
 </Layout>
