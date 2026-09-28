@@ -23,6 +23,7 @@ const config: ResolvedAstroPaperConfig = {
   posts: {
     perPage: userConfig.posts?.perPage ?? 4,
     perIndex: userConfig.posts?.perIndex ?? 4,
+    publishScheduledPosts: userConfig.posts?.publishScheduledPosts ?? false,
     scheduledPostMargin:
       userConfig.posts?.scheduledPostMargin ?? 15 * 60 * 1000,
   },

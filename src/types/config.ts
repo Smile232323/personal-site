@@ -27,6 +27,11 @@ interface PostsConfig {
   /** Posts shown on the index/home page */
   perIndex?: number;
   /**
+   * Show every non-draft post immediately, including posts with a future
+   * `pubDatetime`. Defaults to false so scheduled publishing remains opt-in.
+   */
+  publishScheduledPosts?: boolean;
+  /**
    * Scheduled posts within this window (ms) of their pubDatetime
    * are shown as published. Defaults to 15 minutes.
    */

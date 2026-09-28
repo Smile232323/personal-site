@@ -6,11 +6,17 @@ import config from "@/config";
  *
  * - Excludes drafts always
  * - In production, excludes scheduled posts until `pubDatetime` minus the configured margin
+ *   unless `publishScheduledPosts` is enabled
  * - In dev, always shows non-draft posts to make authoring easier
  */
 export function postFilter({ data }: CollectionEntry<"posts">) {
   const isPublishTimePassed =
     Date.now() >
     new Date(data.pubDatetime).getTime() - config.posts.scheduledPostMargin;
-  return !data.draft && (import.meta.env.DEV || isPublishTimePassed);
+  return (
+    !data.draft &&
+    (import.meta.env.DEV ||
+      config.posts.publishScheduledPosts ||
+      isPublishTimePassed)
+  );
 }
