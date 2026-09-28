@@ -5,6 +5,9 @@ pubDatetime: 2026-08-31
 description: "这里将持续记录笔记、研究和作品。"
 tags: ["meta"]
 featured: true
+draft: false
+curatedAt: 2026-09-29
+sourceNote: "站点自述页，不对应外部帖子；内容介绍本站维护方式与公开边界。"
 ---
 
 欢迎来到我的个人空间。
