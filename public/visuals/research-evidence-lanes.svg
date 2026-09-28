@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">科研证据双通道</title><desc id="desc">宏观研究脉络与逐句精读最终汇合到可引用证据</desc>
+  <rect width="1200" height="640" rx="36" fill="#fff7ed"/>
+  <g font-family="-apple-system,BlinkMacSystemFont,'PingFang SC',sans-serif"><text x="600" y="76" text-anchor="middle" font-size="36" font-weight="700" fill="#7c2d12">精读不是总结，而是建立证据链</text><text x="600" y="112" text-anchor="middle" font-size="20" fill="#9a3412">宏观视角决定读什么，逐句核对决定能写什么</text>
+  <rect x="95" y="170" width="390" height="270" rx="28" fill="#fff" stroke="#fdba74" stroke-width="4"/><text x="290" y="220" text-anchor="middle" font-size="30" font-weight="700" fill="#9a3412">宏观通道</text><text x="145" y="275" font-size="22" fill="#57534e">研究问题 → 贡献 → 假设</text><text x="145" y="325" font-size="22" fill="#57534e">方法 → 实验 → 局限</text><text x="145" y="375" font-size="22" fill="#57534e">决定阅读顺序与比较对象</text>
+  <rect x="715" y="170" width="390" height="270" rx="28" fill="#fff" stroke="#fdba74" stroke-width="4"/><text x="910" y="220" text-anchor="middle" font-size="30" font-weight="700" fill="#9a3412">逐句通道</text><text x="765" y="275" font-size="22" fill="#57534e">术语 → 公式 → 图表</text><text x="765" y="325" font-size="22" fill="#57534e">原文 → 翻译 → 语气</text><text x="765" y="375" font-size="22" fill="#57534e">定位可引用的原始证据</text>
+  <path d="M485 305h230" stroke="#ea580c" stroke-width="8" stroke-linecap="round" stroke-dasharray="14 16"/><path d="M600 440v80" stroke="#ea580c" stroke-width="8" stroke-linecap="round"/><rect x="400" y="515" width="400" height="68" rx="20" fill="#9a3412"/><text x="600" y="558" text-anchor="middle" font-size="25" font-weight="700" fill="#fff">引用账本 + 图表证据卡</text></g>
+</svg>

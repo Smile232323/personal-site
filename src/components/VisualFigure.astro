@@ -9,6 +9,36 @@ const { id, title, tags = [] } = Astro.props;
 
 const visualMap: Array<{ match: string[]; file: string; label: string }> = [
   {
+    match: ["codex-network-debugging"],
+    file: "codex-debug-timeline.svg",
+    label: "Codex 从环境变量到鉴权错误的排障时间线",
+  },
+  {
+    match: ["ai-collaboration-workflow"],
+    file: "ai-collaboration-loop.svg",
+    label: "AI 协作从低摩擦入口到复盘的闭环",
+  },
+  {
+    match: ["ai-assisted-research-workflow"],
+    file: "research-evidence-lanes.svg",
+    label: "科研精读中的宏观与逐句证据双通道",
+  },
+  {
+    match: ["tailscale-and-proxy-routing"],
+    file: "tailscale-route-case.svg",
+    label: "Tailscale 与代理冲突的路由验证案例",
+  },
+  {
+    match: ["pi-agent-architecture-notes"],
+    file: "pi-agent-reading-map.svg",
+    label: "Agent 教程的概念、实现、设计理由三层阅读法",
+  },
+  {
+    match: ["long-form-video-pipeline"],
+    file: "video-timeline-qa.svg",
+    label: "以字幕时间线为轴的长视频验收流程",
+  },
+  {
     match: ["codex", "ssh"],
     file: "codex-network.svg",
     label: "Codex 网络排障分层图",

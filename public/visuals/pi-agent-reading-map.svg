@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">PiAgent 教程阅读地图</title><desc id="desc">用概念、源码实现、设计理由和反例验证 Agent 教程</desc>
+  <rect width="1200" height="640" rx="36" fill="#f0fdf4"/>
+  <g font-family="-apple-system,BlinkMacSystemFont,'PingFang SC',sans-serif"><text x="600" y="76" text-anchor="middle" font-size="36" font-weight="700" fill="#14532d">读 Agent 教程，别只收集术语</text><text x="600" y="112" text-anchor="middle" font-size="20" fill="#166534">每章都问：概念是什么、代码在哪里、为什么这样设计</text>
+  <g text-anchor="middle"><circle cx="260" cy="315" r="142" fill="#dcfce7" stroke="#22c55e" stroke-width="6"/><text x="260" y="300" font-size="30" font-weight="700" fill="#166534">概念</text><text x="260" y="340" font-size="20" fill="#166534">Loop / 工具 / 上下文</text>
+  <circle cx="600" cy="315" r="142" fill="#bbf7d0" stroke="#16a34a" stroke-width="6"/><text x="600" y="300" font-size="30" font-weight="700" fill="#166534">实现</text><text x="600" y="340" font-size="20" fill="#166534">状态 / 事件 / 会话</text>
+  <circle cx="940" cy="315" r="142" fill="#86efac" stroke="#15803d" stroke-width="6"/><text x="940" y="300" font-size="30" font-weight="700" fill="#14532d">理由</text><text x="940" y="340" font-size="20" fill="#14532d">边界 / 取舍 / 失败</text></g>
+  <path d="M402 315h56M742 315h56" stroke="#166534" stroke-width="8" stroke-linecap="round" stroke-dasharray="12 14"/><rect x="210" y="515" width="780" height="70" rx="20" fill="#166534"/><text x="600" y="560" text-anchor="middle" font-size="23" font-weight="700" fill="#fff">再用固定任务测试：只读、改文件、失败修复、人工确认</text></g>
+</svg>
