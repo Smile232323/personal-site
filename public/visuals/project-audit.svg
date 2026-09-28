@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">项目交付证据链</title><desc id="desc">需求、实现、验证、维护四个阶段的项目证据链</desc>
+  <rect width="1200" height="640" rx="36" fill="#f0fdfa"/><g font-family="-apple-system,BlinkMacSystemFont,'PingFang SC',sans-serif" text-anchor="middle"><text x="600" y="84" font-size="36" font-weight="700" fill="#134e4a">项目深度来自证据链</text><text x="600" y="122" font-size="20" fill="#115e59">能解释取舍、失败和验证，项目才经得起追问</text>
+  <path d="M180 320h840" stroke="#14b8a6" stroke-width="9" stroke-linecap="round" stroke-dasharray="15 18"/>
+  <g><rect x="80" y="220" width="220" height="200" rx="28" fill="#fff" stroke="#2dd4bf" stroke-width="5"/><text x="190" y="300" font-size="30" font-weight="700" fill="#115e59">需求</text><text x="190" y="345" font-size="19" fill="#0f766e">为什么做</text><text x="190" y="378" font-size="19" fill="#0f766e">约束是什么</text></g>
+  <g><rect x="325" y="220" width="220" height="200" rx="28" fill="#fff" stroke="#2dd4bf" stroke-width="5"/><text x="435" y="300" font-size="30" font-weight="700" fill="#115e59">实现</text><text x="435" y="345" font-size="19" fill="#0f766e">负责哪部分</text><text x="435" y="378" font-size="19" fill="#0f766e">做了哪些取舍</text></g>
+  <g><rect x="570" y="220" width="220" height="200" rx="28" fill="#fff" stroke="#2dd4bf" stroke-width="5"/><text x="680" y="300" font-size="30" font-weight="700" fill="#115e59">验证</text><text x="680" y="345" font-size="19" fill="#0f766e">如何测结果</text><text x="680" y="378" font-size="19" fill="#0f766e">失败在哪里</text></g>
+  <g><rect x="815" y="220" width="220" height="200" rx="28" fill="#fff" stroke="#2dd4bf" stroke-width="5"/><text x="925" y="300" font-size="30" font-weight="700" fill="#115e59">维护</text><text x="925" y="345" font-size="19" fill="#0f766e">怎么回滚</text><text x="925" y="378" font-size="19" fill="#0f766e">以后怎么改</text></g>
+  <text x="600" y="520" font-size="24" fill="#115e59">项目介绍不是技术名词清单，而是一条可追溯的决策记录</text></g>
+</svg>

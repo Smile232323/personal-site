@@ -16,6 +16,7 @@ import BackToTopButton from "./_components/BackToTopButton.astro";
 import AdjacentPostNav from "./_components/AdjacentPostNav.astro";
 import config from "@/config";
 import SourceNote from "@/components/SourceNote.astro";
+import VisualFigure from "@/components/VisualFigure.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
@@ -140,6 +141,8 @@ const ogImage = ogImageUrl
     </div>
 
     <SourceNote {source} {sourceDate} {curatedAt} {sourceNote} />
+
+    <VisualFigure id={post.id} title={title} tags={tags} />
 
     <article
       id="article"

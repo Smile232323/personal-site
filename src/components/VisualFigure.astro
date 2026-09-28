@@ -1,0 +1,97 @@
+---
+type Props = {
+  id: string;
+  title: string;
+  tags?: string[];
+};
+
+const { id, title, tags = [] } = Astro.props;
+
+const visualMap: Array<{ match: string[]; file: string; label: string }> = [
+  {
+    match: ["codex", "ssh"],
+    file: "codex-network.svg",
+    label: "Codex 网络排障分层图",
+  },
+  {
+    match: ["research", "choosing-ai", "collaboration"],
+    file: "ai-research.svg",
+    label: "AI 辅助科研证据闭环",
+  },
+  {
+    match: [
+      "product-skill",
+      "wechat-ai",
+      "pi-agent",
+      "ai-code",
+      "agent-evaluation",
+    ],
+    file: "agent-workbench.svg",
+    label: "Agent 工作台四层架构",
+  },
+  {
+    match: ["tailscale", "vps", "server-network"],
+    file: "server-baseline.svg",
+    label: "服务器与网络安全基线",
+  },
+  {
+    match: ["long-form-video"],
+    file: "media-pipeline.svg",
+    label: "长视频制作流水线",
+  },
+  {
+    match: ["deepseek-vision"],
+    file: "vision-workflow.svg",
+    label: "视觉模型输入链路",
+  },
+  {
+    match: ["voice-conversion"],
+    file: "voice-workflow.svg",
+    label: "授权语音转换工作流",
+  },
+  {
+    match: ["software-copyright", "interview"],
+    file: "project-audit.svg",
+    label: "项目交付证据链",
+  },
+  {
+    match: ["glasses", "phone-number", "financial"],
+    file: "decision-framework.svg",
+    label: "生活决策复核框架",
+  },
+  {
+    match: [
+      "publishing",
+      "linuxdo-material",
+      "time-sensitive",
+      "community-source",
+    ],
+    file: "publishing-queue.svg",
+    label: "博客发布队列",
+  },
+  { match: ["qwen"], file: "local-inference.svg", label: "本地推理评测指标" },
+  {
+    match: ["education"],
+    file: "education-product.svg",
+    label: "教育 AI 产品观察框架",
+  },
+];
+
+const normalized = `${id} ${tags.join(" ")}`.toLowerCase();
+const visual = visualMap.find(item =>
+  item.match.some(keyword => normalized.includes(keyword))
+) ?? { file: "agent-workbench.svg", label: "可复用工作流结构图" };
+const src = `${import.meta.env.BASE_URL}visuals/${visual.file}`;
+---
+
+<figure class="article-visual not-prose" aria-label={visual.label}>
+  <img
+    src={src}
+    alt={`${title}：${visual.label}`}
+    loading="lazy"
+    decoding="async"
+  />
+  <figcaption>
+    {visual.label}。图示为本文整理的结构关系，具体事实以正文和来源为准。
+  </figcaption>
+</figure>

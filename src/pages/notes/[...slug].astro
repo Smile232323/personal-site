@@ -5,6 +5,7 @@ import Header from "@/components/Header.astro";
 import Main from "@/components/Main.astro";
 import Footer from "@/components/Footer.astro";
 import SourceNote from "@/components/SourceNote.astro";
+import VisualFigure from "@/components/VisualFigure.astro";
 
 export async function getStaticPaths() {
   const notes = await getCollection("notes", ({ data }) => !data.draft);
@@ -24,6 +25,7 @@ const { Content } = await render(note);
       curatedAt={note.data.curatedAt}
       sourceNote={note.data.sourceNote}
     />
+    <VisualFigure id={note.id} title={note.data.title} tags={note.data.tags} />
     <div data-pagefind-body class="app-prose">
       <Content />
     </div>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">生活决策框架</title><desc id="desc">需求、证据、成本和复查四个角度组成的决策框架</desc>
+  <rect width="1200" height="640" rx="36" fill="#fffbeb"/><g font-family="-apple-system,BlinkMacSystemFont,'PingFang SC',sans-serif" text-anchor="middle"><text x="600" y="84" font-size="36" font-weight="700" fill="#713f12">把经验变成可复查的决策</text><text x="600" y="122" font-size="20" fill="#92400e">先描述自己的场景，再比较证据和代价</text>
+  <g transform="translate(600 330)"><circle r="115" fill="#fef3c7" stroke="#f59e0b" stroke-width="7"/><text y="-8" font-size="32" font-weight="700" fill="#78350f">做决定</text><text y="34" font-size="20" fill="#92400e">记录理由</text></g>
+  <g><path d="M600 215V165" stroke="#f59e0b" stroke-width="7"/><circle cx="600" cy="120" r="70" fill="#fff" stroke="#fbbf24" stroke-width="5"/><text x="600" y="114" font-size="27" font-weight="700" fill="#78350f">需求</text><text x="600" y="145" font-size="17" fill="#92400e">使用场景</text></g>
+  <g><path d="M500 300L430 250" stroke="#f59e0b" stroke-width="7"/><circle cx="350" cy="210" r="70" fill="#fff" stroke="#fbbf24" stroke-width="5"/><text x="350" y="204" font-size="27" font-weight="700" fill="#78350f">证据</text><text x="350" y="235" font-size="17" fill="#92400e">来源与复核</text></g>
+  <g><path d="M700 300l70-50" stroke="#f59e0b" stroke-width="7"/><circle cx="850" cy="210" r="70" fill="#fff" stroke="#fbbf24" stroke-width="5"/><text x="850" y="204" font-size="27" font-weight="700" fill="#78350f">成本</text><text x="850" y="235" font-size="17" fill="#92400e">时间与风险</text></g>
+  <g><path d="M600 445v50" stroke="#f59e0b" stroke-width="7"/><circle cx="600" cy="545" r="70" fill="#fff" stroke="#fbbf24" stroke-width="5"/><text x="600" y="539" font-size="27" font-weight="700" fill="#78350f">复查</text><text x="600" y="570" font-size="17" fill="#92400e">何时重新判断</text></g></g>
+</svg>

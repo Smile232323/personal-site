@@ -47,6 +47,18 @@
       @apply border-border mx-auto border;
     }
 
+    .article-visual {
+      @apply border-border bg-muted/20 my-8 overflow-hidden rounded-2xl border p-3;
+
+      img {
+        @apply w-full border-0;
+      }
+
+      figcaption {
+        @apply px-2 pt-2 text-sm;
+      }
+    }
+
     img[role="button"] {
       @apply cursor-zoom-in;
 
