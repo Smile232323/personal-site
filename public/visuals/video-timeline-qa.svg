@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
-  <title id="title">长视频时间线与验收</title><desc id="desc">字幕作为时间线基准，音频、画面和动效围绕它对齐并分层验收</desc>
-  <rect width="1200" height="640" rx="36" fill="#faf5ff"/>
-  <g font-family="-apple-system,BlinkMacSystemFont,'PingFang SC',sans-serif"><text x="600" y="76" text-anchor="middle" font-size="36" font-weight="700" fill="#581c87">长视频自动化的轴，是字幕时间线</text><text x="600" y="112" text-anchor="middle" font-size="20" fill="#86198f">先让每个场景可定位，再让声音、画面和动效围绕同一编号对齐</text>
-  <g><text x="110" y="205" font-size="25" font-weight="700" fill="#6b21a8">场景 01</text><rect x="220" y="175" width="800" height="52" rx="16" fill="#e9d5ff"/><rect x="220" y="175" width="275" height="52" rx="16" fill="#a855f7"/><text x="245" y="210" font-size="20" fill="#fff">旁白 + 字幕</text><text x="1035" y="210" font-size="18" fill="#6b21a8">0:00–0:18</text>
-  <text x="110" y="305" font-size="25" font-weight="700" fill="#6b21a8">场景 02</text><rect x="220" y="275" width="800" height="52" rx="16" fill="#e9d5ff"/><rect x="220" y="275" width="470" height="52" rx="16" fill="#c084fc"/><text x="245" y="310" font-size="20" fill="#581c87">示意图 + 重点词</text><text x="1035" y="310" font-size="18" fill="#6b21a8">0:18–0:49</text>
-  <text x="110" y="405" font-size="25" font-weight="700" fill="#6b21a8">场景 03</text><rect x="220" y="375" width="800" height="52" rx="16" fill="#e9d5ff"/><rect x="220" y="375" width="350" height="52" rx="16" fill="#d8b4fe"/><text x="245" y="410" font-size="20" fill="#581c87">转场 + 引用</text><text x="1035" y="410" font-size="18" fill="#6b21a8">0:49–1:12</text></g>
-  <rect x="180" y="500" width="840" height="70" rx="20" fill="#581c87"/><text x="600" y="545" text-anchor="middle" font-size="23" font-weight="700" fill="#fff">低分辨率样片 → 内容 / 音频 / 画面 / 技术四类验收</text></g>
-</svg>

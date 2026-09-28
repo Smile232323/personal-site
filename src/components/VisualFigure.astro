@@ -7,121 +7,118 @@ type Props = {
 
 const { id, title, tags = [] } = Astro.props;
 
-const visualMap: Array<{ match: string[]; file: string; label: string }> = [
-  {
-    match: ["codex-network-debugging"],
-    file: "codex-debug-timeline.svg",
-    label: "Codex 从环境变量到鉴权错误的排障时间线",
-  },
+type SourceVisual = {
+  match: string[];
+  files: string[];
+  label: string;
+  source: string;
+};
+
+// 文章配图全部来自 Obsidian 保存的 LinuxDo 原帖或回复楼层图片。
+const visualMap: SourceVisual[] = [
   {
     match: ["ai-collaboration-workflow"],
-    file: "ai-collaboration-loop.svg",
-    label: "AI 协作从低摩擦入口到复盘的闭环",
+    files: [
+      "ai-collaboration-01.jpeg",
+      "ai-collaboration-02.jpeg",
+      "ai-collaboration-03.jpeg",
+      "ai-collaboration-04.jpeg",
+    ],
+    label: "原帖图片：AI 协作从日常任务进入可复用工作流",
+    source: "LinuxDo 原帖 #2059718（含回复图片）",
   },
   {
-    match: ["ai-assisted-research-workflow"],
-    file: "research-evidence-lanes.svg",
-    label: "科研精读中的宏观与逐句证据双通道",
+    match: ["ai-assisted-research-workflow", "choosing-ai-for-research"],
+    files: ["ai-research-01.png"],
+    label: "原帖图片：论文初稿讨论中的实际页面",
+    source: "LinuxDo 原帖 #2772620",
   },
   {
-    match: ["tailscale-and-proxy-routing"],
-    file: "tailscale-route-case.svg",
-    label: "Tailscale 与代理冲突的路由验证案例",
+    match: ["deepseek-vision-workflow"],
+    files: [
+      "deepseek-vision-01.png",
+      "deepseek-vision-02.png",
+      "deepseek-vision-03.png",
+    ],
+    label: "原帖图片：DeepSeek 看图的代理、输入与配置截图",
+    source: "LinuxDo 原帖 #2713829",
   },
   {
     match: ["pi-agent-architecture-notes"],
-    file: "pi-agent-reading-map.svg",
-    label: "Agent 教程的概念、实现、设计理由三层阅读法",
+    files: [
+      "pi-agent-01.jpeg",
+      "pi-agent-02.jpeg",
+      "pi-agent-03.jpeg",
+      "pi-agent-04.png",
+    ],
+    label: "原帖图片：PiAgent 的配置、工作台和回复截图",
+    source: "LinuxDo 原帖 #2571534（含引用回复图片）",
+  },
+  {
+    match: ["product-skill-design"],
+    files: ["product-skill-01.png", "product-skill-02.png"],
+    label: "原帖图片：产品经理 Skill 推荐项目截图",
+    source: "LinuxDo 原帖 #2635180（含回复图片）",
+  },
+  {
+    match: ["wechat-ai-project-notes"],
+    files: ["wechat-ai-01.jpeg", "wechat-ai-02.jpeg"],
+    label: "原帖图片：微信 Hook 接收消息的代码截图",
+    source: "LinuxDo 原帖 #2758878",
+  },
+  {
+    match: ["qwen-local-inference-notes"],
+    files: ["qwen-inference-01.png", "qwen-inference-02.png"],
+    label: "原帖图片：Qwen 27B 推理速度和显卡运行状态",
+    source: "LinuxDo 原帖 #2774365",
+  },
+  {
+    match: ["glasses-purchase-framework"],
+    files: [
+      "glasses-01.png",
+      "glasses-02.png",
+      "glasses-03.jpeg",
+      "glasses-04.png",
+    ],
+    label: "原帖附件：镜框尺寸、参数和镜片选择讨论",
+    source: "LinuxDo 原帖 #1116647（含回复附件）",
   },
   {
     match: ["long-form-video-pipeline"],
-    file: "video-timeline-qa.svg",
-    label: "以字幕时间线为轴的长视频验收流程",
+    files: ["long-video-01.png", "long-video-02.png", "long-video-03.png"],
+    label: "原帖图片：Remotion 长视频制作和示例截图",
+    source: "LinuxDo 原帖 #2652859",
   },
   {
-    match: ["codex", "ssh"],
-    file: "codex-network.svg",
-    label: "Codex 网络排障分层图",
-  },
-  {
-    match: ["research", "choosing-ai", "collaboration"],
-    file: "ai-research.svg",
-    label: "AI 辅助科研证据闭环",
-  },
-  {
-    match: [
-      "product-skill",
-      "wechat-ai",
-      "pi-agent",
-      "ai-code",
-      "agent-evaluation",
-    ],
-    file: "agent-workbench.svg",
-    label: "Agent 工作台四层架构",
-  },
-  {
-    match: ["tailscale", "vps", "server-network"],
-    file: "server-baseline.svg",
-    label: "服务器与网络安全基线",
-  },
-  {
-    match: ["long-form-video"],
-    file: "media-pipeline.svg",
-    label: "长视频制作流水线",
-  },
-  {
-    match: ["deepseek-vision"],
-    file: "vision-workflow.svg",
-    label: "视觉模型输入链路",
-  },
-  {
-    match: ["voice-conversion"],
-    file: "voice-workflow.svg",
-    label: "授权语音转换工作流",
-  },
-  {
-    match: ["software-copyright", "interview"],
-    file: "project-audit.svg",
-    label: "项目交付证据链",
-  },
-  {
-    match: ["glasses", "phone-number", "financial"],
-    file: "decision-framework.svg",
-    label: "生活决策复核框架",
-  },
-  {
-    match: [
-      "publishing",
-      "linuxdo-material",
-      "time-sensitive",
-      "community-source",
-    ],
-    file: "publishing-queue.svg",
-    label: "博客发布队列",
-  },
-  { match: ["qwen"], file: "local-inference.svg", label: "本地推理评测指标" },
-  {
-    match: ["education"],
-    file: "education-product.svg",
-    label: "教育 AI 产品观察框架",
+    match: ["tailscale-and-proxy-routing"],
+    files: ["tailscale-01.png"],
+    label: "回复图片：Clash 与 Tailscale 配置示例",
+    source: "LinuxDo 原帖 #2817884 的回复楼层",
   },
 ];
 
 const normalized = `${id} ${tags.join(" ")}`.toLowerCase();
 const visual = visualMap.find(item =>
   item.match.some(keyword => normalized.includes(keyword))
-) ?? { file: "agent-workbench.svg", label: "可复用工作流结构图" };
-const src = `${import.meta.env.BASE_URL}visuals/${visual.file}`;
+);
 ---
 
-<figure class="article-visual not-prose" aria-label={visual.label}>
-  <img
-    src={src}
-    alt={`${title}：${visual.label}`}
-    loading="lazy"
-    decoding="async"
-  />
-  <figcaption>
-    {visual.label}。图示为本文整理的结构关系，具体事实以正文和来源为准。
-  </figcaption>
-</figure>
+{
+  visual && (
+    <figure class="article-visual not-prose" aria-label={visual.label}>
+      <div class="article-visual-grid">
+        {visual.files.map(file => (
+          <img
+            src={`${import.meta.env.BASE_URL}media/posts/${file}`}
+            alt={`${title}：${visual.label}`}
+            loading="lazy"
+            decoding="async"
+          />
+        ))}
+      </div>
+      <figcaption>
+        {visual.label}。来源：{visual.source}。
+      </figcaption>
+    </figure>
+  )
+}

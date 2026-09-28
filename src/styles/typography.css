@@ -50,8 +50,26 @@
     .article-visual {
       @apply border-border bg-muted/20 my-8 overflow-hidden rounded-2xl border p-3;
 
-      img {
-        @apply w-full border-0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .article-visual-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+        gap: 0.75rem;
+        width: 100%;
+        align-items: start;
+      }
+
+      .article-visual-grid img {
+        @apply border-0;
+
+        width: 100%;
+        max-width: 100%;
+        max-height: min(68vh, 560px);
+        object-fit: contain;
+        background: color-mix(in srgb, var(--muted) 18%, transparent);
       }
 
       figcaption {

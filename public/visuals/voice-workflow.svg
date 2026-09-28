@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
-  <title id="title">授权语音转换工作流</title><desc id="desc">内容、韵律、音色和授权四个维度的语音转换图</desc>
-  <rect width="1200" height="640" rx="36" fill="#fdf2f8"/><g font-family="-apple-system,BlinkMacSystemFont,'PingFang SC',sans-serif" text-anchor="middle"><text x="600" y="84" font-size="36" font-weight="700" fill="#831843">语音转换的四个检查点</text><text x="600" y="122" font-size="20" fill="#9d174d">先确认授权，再比较内容、韵律和音色</text>
-  <g transform="translate(140 205)"><rect width="210" height="220" rx="28" fill="#fff" stroke="#f472b6" stroke-width="5"/><text x="105" y="85" font-size="31" font-weight="700" fill="#9d174d">内容</text><text x="105" y="135" font-size="19" fill="#be185d">文字与发音</text><text x="105" y="170" font-size="19" fill="#be185d">停顿和句子</text></g>
-  <g transform="translate(385 205)"><rect width="210" height="220" rx="28" fill="#fff" stroke="#f472b6" stroke-width="5"/><text x="105" y="85" font-size="31" font-weight="700" fill="#9d174d">韵律</text><text x="105" y="135" font-size="19" fill="#be185d">语速与重音</text><text x="105" y="170" font-size="19" fill="#be185d">情绪和节奏</text></g>
-  <g transform="translate(630 205)"><rect width="210" height="220" rx="28" fill="#fff" stroke="#f472b6" stroke-width="5"/><text x="105" y="85" font-size="31" font-weight="700" fill="#9d174d">音色</text><text x="105" y="135" font-size="19" fill="#be185d">音高与共鸣</text><text x="105" y="170" font-size="19" fill="#be185d">声音特征</text></g>
-  <g transform="translate(875 205)"><rect width="210" height="220" rx="28" fill="#fff" stroke="#f472b6" stroke-width="5"/><text x="105" y="85" font-size="31" font-weight="700" fill="#9d174d">授权</text><text x="105" y="135" font-size="19" fill="#be185d">本人明确同意</text><text x="105" y="170" font-size="19" fill="#be185d">公开标注与撤回</text></g>
-  <text x="600" y="520" font-size="24" fill="#9d174d">每次试验保留输入、模型版本、处理参数和授权记录</text></g>
-</svg>
