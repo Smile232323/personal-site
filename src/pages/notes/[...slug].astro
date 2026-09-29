@@ -26,13 +26,13 @@ const { Content } = await render(note);
       curatedAt={note.data.curatedAt}
       sourceNote={note.data.sourceNote}
     />
-    <VisualFigure
-      id={note.id}
-      title={note.data.title}
-      tags={note.data.tags}
-      body={note.body}
-    />
     <div data-pagefind-body class="app-prose">
+      <VisualFigure
+        id={note.id}
+        title={note.data.title}
+        tags={note.data.tags}
+        body={note.body}
+      />
       <Content />
     </div>
   </Main>

@@ -142,8 +142,6 @@ const ogImage = ogImageUrl
 
     <SourceNote {source} {sourceDate} {curatedAt} {sourceNote} />
 
-    <VisualFigure id={post.id} title={title} tags={tags} body={post.body} />
-
     <article
       id="article"
       class:list={[
@@ -152,6 +150,7 @@ const ogImage = ogImageUrl
         "prose-pre:bg-(--shiki-light-bg) dark:prose-pre:bg-(--shiki-dark-bg)",
       ]}
     >
+      <VisualFigure id={post.id} title={title} tags={tags} body={post.body} />
       <Content />
     </article>
 
