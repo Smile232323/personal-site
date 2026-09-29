@@ -14,8 +14,19 @@ type SourceVisual = {
   source: string;
 };
 
-// 文章配图全部来自 Obsidian 保存的 LinuxDo 原帖或回复楼层图片。
+// 文章与笔记配图全部来自 Obsidian 保存的 LinuxDo 原帖或回复楼层图片。
 const visualMap: SourceVisual[] = [
+  {
+    match: ["ai-resource-index-to-learning-path"],
+    files: [
+      "ai-resource-index-01.png",
+      "ai-resource-index-02.png",
+      "ai-resource-index-03.jpeg",
+      "ai-resource-index-04.png",
+    ],
+    label: "回复 #61 引用的《Vibe Coding 真解》目录与序言截图",
+    source: "LinuxDo 原帖 #1798211 的回复 #61（引用资料图片）",
+  },
   {
     match: ["ai-collaboration-workflow"],
     files: [
