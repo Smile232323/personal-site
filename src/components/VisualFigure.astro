@@ -3,9 +3,10 @@ type Props = {
   id: string;
   title: string;
   tags?: string[];
+  body?: string;
 };
 
-const { id, title, tags = [] } = Astro.props;
+const { id, title, tags = [], body = "" } = Astro.props;
 
 type SourceVisual = {
   match: string[];
@@ -42,7 +43,7 @@ const visualMap: SourceVisual[] = [
     match: ["ai-assisted-research-workflow", "choosing-ai-for-research"],
     files: ["ai-research-01.png"],
     label: "原帖图片：论文初稿讨论中的实际页面",
-    source: "LinuxDo 原帖 #2772620",
+    source: "LinuxDo 原帖 #2772620 的回复 #8",
   },
   {
     match: ["deepseek-vision-workflow"],
@@ -81,7 +82,7 @@ const visualMap: SourceVisual[] = [
     match: ["qwen-local-inference-notes"],
     files: ["qwen-inference-01.png", "qwen-inference-02.png"],
     label: "原帖图片：Qwen 27B 推理速度和显卡运行状态",
-    source: "LinuxDo 原帖 #2774365",
+    source: "LinuxDo 原帖 #2774365 的正文 #1",
   },
   {
     match: ["glasses-purchase-framework"],
@@ -92,7 +93,7 @@ const visualMap: SourceVisual[] = [
       "glasses-04.png",
     ],
     label: "原帖附件：镜框尺寸、参数和镜片选择讨论",
-    source: "LinuxDo 原帖 #1116647（含回复附件）",
+    source: "LinuxDo 原帖 #1116647 的回复 #493、#502、#1144、#717",
   },
   {
     match: ["long-form-video-pipeline"],
@@ -133,10 +134,14 @@ const normalized = `${id} ${tags.join(" ")}`.toLowerCase();
 const visual = visualMap.find(item =>
   item.match.some(keyword => normalized.includes(keyword))
 );
+// 正文已在对应段落中引用整组原图时，不再在文章顶部重复展示。
+const hasInlineVisuals = visual?.files.every(file =>
+  body.includes(`/media/posts/${file}`)
+);
 ---
 
 {
-  visual && (
+  visual && !hasInlineVisuals && (
     <figure class="article-visual not-prose" aria-label={visual.label}>
       <div class="article-visual-grid">
         {visual.files.map(file => (
